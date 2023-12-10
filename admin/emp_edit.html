@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Edit Employee</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/user.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+
+        <style>
+            #input_edit {
+                /* Variables */
+                --button_radius: 0.75em;
+                --button_color: #e8e8e8;
+                --button_outline_color: #000000;
+                font-size: 12px;
+                font-weight: bold;
+                border: none;
+                margin-top: -53px;
+                border-radius: var(--button_radius);
+                background: var(--button_outline_color);
+              }
+              
+              #input_edit {
+                display: block;
+                box-sizing: border-box;
+                border: 2px solid var(--button_outline_color);
+                border-radius: var(--button_radius);
+                padding: 0.75em 1.5em;
+                background: var(--button_color);
+                color: var(--button_outline_color);
+                transform: translateY(-0.2em);
+                transition: transform 0.1s ease;
+              }
+              
+              #input_edit:hover {
+                /* Pull the button upwards when hovered */
+                transform: translateY(-0.33em);
+              }
+              
+              #input_edit:active {
+                /* Push the button downwards when pressed */
+                transform: translateY(0);
+              }
+        </style>
+	</head>
+
+	<body>
+    <div class="container">
+        <nav>
+          <ul>
+            <li><a href="#" class="logo">
+              <img src="../img/accountlogo.jpg">
+              <span class="nav-item">Admin</span>
+            </a></li>
+            <li><a href="#">
+              <span class="nav-item"><span id="nav_icon" class="material-symbols-outlined">account_circle</span>Create User</span>
+            </a></li>
+            <li><a href="#">
+              <span class="nav-item"><span id="nav_icon" class="material-symbols-outlined">chat</span>Message</span>
+            </a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="nav-item"><span id="nav_icon" class="material-symbols-outlined">query_stats</span>Login Report</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li> <a href="daily.php"><span id="l_icon" class="material-symbols-outlined">today</span>Daily Attendance</a></li>
+                  <li><a href="#"><span id="l_icon"class="material-symbols-outlined">calendar_month</span>Monthly Attendance</a></li>
+                </ul>
+              </li>
+
+            <li><a href="../emp_view.php">
+              <span class="nav-item"><span id="nav_icon" class="material-symbols-outlined">database</span>Employee Data</span>
+            </a></li>
+            <li><a href="#">
+              <span class="nav-item"><span id="nav_icon" class="material-symbols-outlined">
+                settings
+                </span>Setting</span>
+            </a></li>
+    
+            <li><a href="#" class="logout">
+              <span class="nav-item"><span id="nav_icon" class="material-symbols-outlined">logout</span>Log out</span>
+            </a></li>
+          </ul>
+        </nav>
+
+        <div class="wrapper">
+            <form method="post" action="../emp_process.php" id="wizard">
+        		<!-- SECTION 1 -->
+                <h4></h4>
+                <section>
+                    <div class="inner">
+                        <center><header>Edit Employee Information</header></center><br>
+                    	<a href="#" class="avartar">
+                    		<img src="images/avartar.png" alt="">
+                    	</a>
+                    	<div class="form-row form-group">
+                    		<div class="form-holder">
+                    			<input type="text" class="form-control" name="first_name" placeholder="First Name">
+                    		</div>
+                    		<div class="form-holder">
+                    			<input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                    		</div>
+                            <div class="form-holder">
+                    			<input type="text" class="form-control" name="middle_name" placeholder="Middle Name">
+                    		</div>
+                    	</div>
+                    	
+                    	<div class="form-row">
+                    		<div class="form-holder">
+                    			<input type="text" class="form-control" name="email" placeholder="Email">
+                    			<i class="zmdi zmdi-email small"></i>
+                    		</div>
+                    	</div>
+
+                    	<div class="form-row">
+                    		<div class="form-holder">
+                    			<input type="text" class="form-control" name="phone" placeholder="Phone">
+                    			<i class="zmdi zmdi-smartphone-android"></i>
+                    		</div>
+                    	</div>
+                    	<div class="form-row">
+                    		<div class="form-holder">
+                    			<input type="text" class="form-control" name="address" placeholder="Address">
+                                <i class="zmdi zmdi-map small"></i>
+                    		</div>
+                    	</div>
+
+
+                        <div class="form-row">
+                            <div class="form-holder">
+                                <input type="text" class="form-control datepicker-here" data-language='en' data-date-format="dd - mm - yyyy" id="dp1" name="birthdate" placeholder="Date of Birth"> 
+                                <i class="zmdi zmdi-calendar small"></i>
+                            </div>
+                        </div>  
+                        
+                        <div class="form-row">
+                    		<div class="form-holder">
+                    			<input type="text" class="form-control" name="work_status" placeholder="Work Status">
+                                <i class="zmdi zmdi-case small"></i>
+                    		</div>
+                    	</div>
+
+                        <div class="form-row">
+                    		<div class="form-holder">
+                    			<input type="text" class="form-control" name="p_method" placeholder="Payment Method">
+                                <i class="zmdi zmdi-card small"></i>
+                    		</div>
+                    	</div>
+    
+                    </div>
+                </section>
+                
+				
+
+                    <div class="actions">
+                     <Center><input id="input_edit" class="button_top" type="submit" name="edit" value="Update Data" ></Center>
+                    </div>
+
+                </section>
+            </form>
+		</div>
+
+      </div>
+	
+</body>
+</html>
